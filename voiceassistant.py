@@ -66,14 +66,14 @@ def listen():
                 print("Recognizing...")
                 # whisper model options are found here: https://github.com/openai/whisper#available-models-and-languages
                 # other speech recognition models are also available.
-                text = r.recognize_whisper(
+                text = r.recognize_google(
                     audio,
-                    model="medium.en",
-                    show_dict=True,
-                )["text"]
+                    language="en-IN", 
+                    show_all=False
+                )
                 print("Recognized: " + text)
-                if "bye" in text.lower():
-                    break
+                # if "bye" in text.lower():
+                #     break
             except Exception as e:
                 unrecognized_speech_text = (
                     f"Sorry, I didn't catch that. Exception was: {e}s"
