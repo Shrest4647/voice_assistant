@@ -1,0 +1,6 @@
+# python gitignores
+venv
+.venv
+__pycache__
+.env
+env
